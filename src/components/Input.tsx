@@ -12,16 +12,16 @@ const Input = () => {
       meanings: [
         {
           partOfSpeech: string;
-          definitions: [definition: string | Array<string>];
-          synonyms: Array<string> | undefined;
-          antonym: Array<string> | undefined;
+          definitions: [{ definition: string }];
+          synonyms: string[];
+          antonyms: string[];
         }
       ];
       sourceUrls: string[];
     }[]
   >([]);
 
-  const handleButtonClick = async (e) => {
+  const handleButtonClick = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     try {
       setIsLoading(true);
