@@ -1,25 +1,38 @@
 import { useState } from 'react';
-import Meaning from './Meaning';
 
-const Input = () => {
+type inputProps = {
+  setWord: React.Dispatch<
+    React.SetStateAction<
+      {
+        word: string;
+        phonetic: string;
+        phonetics: [
+          {
+            audio: string;
+            text: string;
+          }
+        ];
+        meanings: [
+          {
+            partOfSpeech: string;
+            definitions: [
+              {
+                definition: string;
+              }
+            ];
+            synonyms: string[];
+            antonyms: string[];
+          }
+        ];
+        sourceUrls: string[];
+      }[]
+    >
+  >;
+};
+
+const Input = ({ setWord }: inputProps) => {
   const [definition, setDefinition] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [word, setWord] = useState<
-    {
-      word: string;
-      phonetic: string;
-      phonetics: [{ audio: string; text: string }];
-      meanings: [
-        {
-          partOfSpeech: string;
-          definitions: [{ definition: string }];
-          synonyms: string[];
-          antonyms: string[];
-        }
-      ];
-      sourceUrls: string[];
-    }[]
-  >([]);
 
   const handleButtonClick = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
@@ -37,12 +50,6 @@ const Input = () => {
     }
   };
 
-  // GET BACK TO THIS LATER
-  // WHEN WORKING ON THE WORD HEADER SECTION
-  // function play() {
-  //   new Audio(word[0].phonetics[0].audio).play();
-  // }
-
   return (
     <main>
       <div>
@@ -57,7 +64,6 @@ const Input = () => {
           Search
         </button>
       </div>
-      <Meaning word={word} />
     </main>
   );
 };

@@ -2,7 +2,6 @@ type meaningProps = {
   word: {
     word: string;
     phonetic: string;
-    phonetics: [{ audio: string; text: string }];
     meanings: [
       {
         partOfSpeech: string;
