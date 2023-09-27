@@ -19,7 +19,17 @@ const WordHeader = ({ word }: wordHeaderProps) => {
     }
   }
 
-  return <div>{word.length > 1 && <button onClick={play}>Play</button>}</div>;
+  return (
+    <div>
+      {word.length > 1 && (
+        <div>
+          {<button onClick={play}>Play</button>}
+          <p>{word[0].word}</p>
+          <p>{word[0].phonetic}</p>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default WordHeader;
