@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 type inputProps = {
+  word: object[];
   setWord: React.Dispatch<
     React.SetStateAction<
       {
@@ -30,7 +31,7 @@ type inputProps = {
   >;
 };
 
-const Input = ({ setWord }: inputProps) => {
+const Input = ({ word, setWord }: inputProps) => {
   const [definition, setDefinition] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
@@ -39,6 +40,7 @@ const Input = ({ setWord }: inputProps) => {
     e.preventDefault();
     setIsClicked(true);
     if (definition.length === 0) {
+      setWord([]);
       return;
     }
     try {
@@ -52,6 +54,7 @@ const Input = ({ setWord }: inputProps) => {
     } finally {
       setIsLoading(false);
       setDefinition('');
+      setIsClicked(false);
     }
   };
 
@@ -68,8 +71,8 @@ const Input = ({ setWord }: inputProps) => {
         <button disabled={isLoading} onClick={handleButtonClick}>
           Search
         </button>
-        {definition.length === 0 && isClicked && <p>Whoops!</p>}
       </div>
+      {definition.length === 0 && isClicked && word.length === 0 && <p>Whoops!</p>}
     </main>
   );
 };
