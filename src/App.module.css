@@ -103,13 +103,33 @@ select {
   --color-grey-light: hsl(0, 0%, 91%);
   --color-grey: hsl(0, 0%, 51%);
   --color-grey-dark: hsl(0, 0%, 23%);
-  --color-grey-darker: hsl(0, 0%, 18%);
+  --color-grey-darker: 0, 0%, 18%;
   --color-blackish: hsl(0, 0%, 12%);
   --color-black: hsl(0, 0%, 2%);
   --color-almost-red: hsl(0, 100%, 66%);
   --color-almost-purple: hsl(274, 82%, 60%);
+
+  /* SPACING */
+  --space-tiny: 1rem;
 }
+
+/* STYLING STARTS HERE */
 
 body {
   font-family: 'Inter';
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
 }

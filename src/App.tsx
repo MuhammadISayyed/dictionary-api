@@ -1,5 +1,5 @@
-import './App.module.css';
-import Input from './components/Input';
+import styles from './App.module.css';
+import Input from './components/Input/Input';
 import { useState } from 'react';
 import Meaning from './components/Meaning';
 import WordHeader from './components/WordHeader';
@@ -22,10 +22,12 @@ function App() {
     }[]
   >([]);
   return (
-    <div>
-      <Input word={word} setWord={setWord} />
-      <WordHeader word={word} />
-      <Meaning word={word} />
+    <div className={styles.app}>
+      <div className={styles.container}>
+        <Input word={word} setWord={setWord} />
+        <WordHeader word={word} />
+        <Meaning word={word} />
+      </div>
     </div>
   );
 }

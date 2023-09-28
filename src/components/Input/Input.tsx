@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from './Input.module.css';
 
 type inputProps = {
   word: object[];
@@ -59,21 +60,35 @@ const Input = ({ word, setWord }: inputProps) => {
   };
 
   return (
-    <main>
-      <div>
-        <input
-          required
-          type="text"
-          onChange={(e) => setDefinition(e.target.value)}
-          value={definition}
-          placeholder="Search for any word..."
-        />
-        <button disabled={isLoading} onClick={handleButtonClick}>
-          Search
-        </button>
+    <div className={styles.input_section}>
+      <div className={styles.container}>
+        <form action="submit" className={styles.form}>
+          <input
+            className={styles.input}
+            required
+            type="text"
+            onChange={(e) => setDefinition(e.target.value)}
+            value={definition}
+            placeholder="Search for any word..."
+          />
+          <button className={styles.search} disabled={isLoading} onClick={handleButtonClick}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+              <path
+                fill="none"
+                stroke="#A445ED"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="m12.663 12.663 3.887 3.887M1 7.664a6.665 6.665 0 1 0 13.33 0 6.665 6.665 0 0 0-13.33 0Z"
+              />
+            </svg>
+          </button>
+        </form>
       </div>
-      {definition.length === 0 && isClicked && word.length === 0 && <p>Whoops!</p>}
-    </main>
+      {definition.length === 0 && isClicked && word.length === 0 && (
+        <p className={styles.empty}>Whoops, can't be empty...</p>
+      )}
+    </div>
   );
 };
 
