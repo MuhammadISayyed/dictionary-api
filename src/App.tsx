@@ -1,10 +1,11 @@
 import styles from './App.module.css';
 import Input from './components/Input/Input';
 import { useState } from 'react';
-import Meaning from './components/Meaning';
+import Meaning from './components/Meaning/Meaning';
 import WordHeader from './components/WordHeader/WordHeader';
 
 function App() {
+  const [definition, setDefinition] = useState('');
   const [word, setWord] = useState<
     {
       word: string;
@@ -24,9 +25,19 @@ function App() {
   return (
     <div className={styles.app}>
       <div className={styles.container}>
-        <Input word={word} setWord={setWord} />
+        <Input
+          word={word}
+          setWord={setWord}
+          definition={definition}
+          setDefinition={setDefinition}
+        />
         <WordHeader word={word} />
-        <Meaning word={word} />
+        <Meaning
+          word={word}
+          setWord={setWord}
+          definition={definition}
+          setDefinition={setDefinition}
+        />
       </div>
     </div>
   );

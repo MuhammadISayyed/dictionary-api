@@ -30,10 +30,11 @@ type inputProps = {
       }[]
     >
   >;
+  definition: string;
+  setDefinition: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Input = ({ word, setWord }: inputProps) => {
-  const [definition, setDefinition] = useState('');
+const Input = ({ word, setWord, definition, setDefinition }: inputProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 

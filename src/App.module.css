@@ -116,6 +116,7 @@ select {
   /* Font sizes */
   --font-heading-1: 4rem;
   --font-subtitle: 2rem;
+  --font-heading-small: 1.3rem;
 }
 
 /* STYLING STARTS HERE */
