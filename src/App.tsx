@@ -2,7 +2,7 @@ import styles from './App.module.css';
 import Input from './components/Input/Input';
 import { useState } from 'react';
 import Meaning from './components/Meaning';
-import WordHeader from './components/WordHeader';
+import WordHeader from './components/WordHeader/WordHeader';
 
 function App() {
   const [word, setWord] = useState<

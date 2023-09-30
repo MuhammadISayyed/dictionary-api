@@ -111,6 +111,11 @@ select {
 
   /* SPACING */
   --space-tiny: 1rem;
+  --space-medium: 2.8rem;
+
+  /* Font sizes */
+  --font-heading-1: 4rem;
+  --font-subtitle: 2rem;
 }
 
 /* STYLING STARTS HERE */
