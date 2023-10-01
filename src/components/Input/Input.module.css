@@ -18,16 +18,36 @@
   }
 }
 
-.input {
+.container_light {
   background-color: var(--color-grey-lighter);
+}
+
+.container_dark {
+  background-color: var(--color-blackish);
+}
+
+.input {
   outline: none;
   border: none;
-  color: var(--color-grey-darker);
   font-weight: bold;
   flex-grow: 1;
 
   &::placeholder {
     color: hsla(var(--color-grey-darker), 0.25);
+  }
+}
+
+.input_light {
+  background-color: var(--color-grey-lighter);
+  color: var(--color-grey-darker);
+}
+
+.input_dark {
+  background-color: var(--color-blackish);
+  color: var(--color-white);
+
+  &::placeholder {
+    color: var(--color-white-25);
   }
 }
 

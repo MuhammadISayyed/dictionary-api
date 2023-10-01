@@ -99,6 +99,7 @@ select {
 :root {
   /* COLORS */
   --color-white: hsl(0, 0%, 100%);
+  --color-white-25: hsl(0, 0%, 25%);
   --color-grey-lighter: hsl(0, 0%, 96%);
   --color-grey-light: hsl(0, 0%, 91%);
   --color-grey: hsl(0, 0%, 51%);
@@ -109,6 +110,10 @@ select {
   --color-almost-red: hsl(0, 100%, 66%);
   --color-almost-purple: hsl(274, 82%, 60%);
 
+  /* LIGHT THEME */
+
+  /* DARK THEME */
+
   /* SPACING */
   --space-tiny: 1rem;
   --space-medium: 2.8rem;
@@ -117,6 +122,11 @@ select {
   --font-heading-1: 4rem;
   --font-subtitle: 2rem;
   --font-heading-small: 1.3rem;
+}
+
+.dark {
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 /* STYLING STARTS HERE */

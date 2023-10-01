@@ -30,9 +30,10 @@ type inputProps = {
       }[]
     >
   >;
+  theme: string;
 };
 
-const Input = ({ word, setWord }: inputProps) => {
+const Input = ({ word, setWord, theme }: inputProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const [definition, setDefinition] = useState('');
@@ -61,10 +62,16 @@ const Input = ({ word, setWord }: inputProps) => {
 
   return (
     <div className={styles.input_section}>
-      <div className={styles.container}>
+      <div
+        className={`${styles.container} ${
+          theme === 'dark' ? styles.container_dark : styles.container_light
+        }`}
+      >
         <form action="submit" className={styles.form}>
           <input
-            className={styles.input}
+            className={`${styles.input} ${
+              theme === 'dark' ? styles.input_dark : styles.input_light
+            }`}
             required
             type="text"
             onChange={(e) => setDefinition(e.target.value)}

@@ -3,6 +3,7 @@ import Input from './components/Input/Input';
 import { useState } from 'react';
 import Meaning from './components/Meaning/Meaning';
 import WordHeader from './components/WordHeader/WordHeader';
+import AppHeader from './components/AppHeader/AppHeader';
 
 function App() {
   const [word, setWord] = useState<
@@ -21,10 +22,13 @@ function App() {
       sourceUrls: string[];
     }[]
   >([]);
+  const [theme, setTheme] = useState('light');
+
   return (
-    <div className={styles.app}>
+    <div className={`${styles.app}`}>
       <div className={styles.container}>
-        <Input word={word} setWord={setWord} />
+        <AppHeader setTheme={setTheme} />
+        <Input theme={theme} word={word} setWord={setWord} />
         <WordHeader word={word} />
         <Meaning word={word} />
       </div>
