@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import styles from './Meaning.module.css';
 
 type meaningProps = {
@@ -15,50 +14,9 @@ type meaningProps = {
     ];
     sourceUrls: string[];
   }[];
-  setWord: React.Dispatch<
-    React.SetStateAction<
-      {
-        word: string;
-        phonetic: string;
-        phonetics: [
-          {
-            audio: string;
-            text: string;
-          }
-        ];
-        meanings: [
-          {
-            partOfSpeech: string;
-            definitions: [
-              {
-                definition: string;
-              }
-            ];
-            synonyms: string[];
-            antonyms: string[];
-          }
-        ];
-        sourceUrls: string[];
-      }[]
-    >
-  >;
-  definition: string;
-  setDefinition: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Meaning = ({ word, definition, setDefinition, setWord }: meaningProps) => {
-  useEffect(() => {});
-  const handleButtonClick = async (e: React.MouseEvent<HTMLElement>) => {
-    e.preventDefault;
-    try {
-      const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${definition}`);
-      const data = await response.json();
-      setWord(data);
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+const Meaning = ({ word }: meaningProps) => {
   return (
     <div className={styles.container}>
       <main>
@@ -90,7 +48,7 @@ const Meaning = ({ word, definition, setDefinition, setWord }: meaningProps) => 
                             <span>
                               {wordMeaning.synonyms.map((synonym, index) => (
                                 <span className={styles.alternative} key={index}>
-                                  <button onClick={handleButtonClick}> {synonym}</button>
+                                  <span> {synonym}</span>
                                   <span className={styles.dot}>.</span>{' '}
                                 </span>
                               ))}

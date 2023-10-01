@@ -30,13 +30,12 @@ type inputProps = {
       }[]
     >
   >;
-  definition: string;
-  setDefinition: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Input = ({ word, setWord, definition, setDefinition }: inputProps) => {
+const Input = ({ word, setWord }: inputProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const [definition, setDefinition] = useState('');
 
   const handleButtonClick = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
