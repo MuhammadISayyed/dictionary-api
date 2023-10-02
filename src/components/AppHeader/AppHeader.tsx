@@ -41,8 +41,9 @@ const AppHeader = ({ setTheme }: AppHeaderProps) => {
           <path d="M11 9h12" />
         </g>
       </svg>
-      <div>
+      <div className={styles.toggles}>
         <SelectFont />
+        <hr />
         <button onClick={handleToggle} className={styles.toggle_btn}>
           toggle it
         </button>
