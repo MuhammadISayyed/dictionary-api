@@ -117,10 +117,11 @@ select {
   /* SPACING */
   --space-tiny: 1rem;
   --space-medium: 2.8rem;
+  --space-large: 3.5rem;
 
   /* Font sizes */
   --font-heading-1: 4rem;
-  --font-subtitle: 2rem;
+  --font-subtitle: 1.8rem;
   --font-heading-small: 1.3rem;
 }
 

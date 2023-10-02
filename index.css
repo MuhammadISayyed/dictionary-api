@@ -6,3 +6,15 @@
   background-color: var(--color-black);
   color: var(--color-white);
 }
+
+.sans {
+  font-family: 'Inter';
+}
+
+.serif {
+  font-family: 'Lato';
+}
+
+.mono {
+  font-family: 'Inconsolata';
+}

@@ -1,0 +1,46 @@
+.container {
+  width: inherit;
+  margin-bottom: var(--space-large);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+svg {
+  margin-inline-start: 0.6rem;
+}
+
+.select_area {
+  outline: none;
+  color: var(--color-almost-purple);
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+  padding: 5px;
+}
+
+.select_btn {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: var(--font-heading-small);
+  font-weight: bold;
+  margin-inline-end: var(--space-medium);
+}
+
+.item {
+  outline: none;
+  &:focus,
+  &:hover,
+  :active {
+    background-color: var(--color-almost-purple);
+    color: var(--color-white);
+  }
+}
+
+.toggle_btn {
+  background: none;
+  outline: none;
+  border: none;
+}
