@@ -13,12 +13,14 @@ type meaningProps = {
       }
     ];
     sourceUrls: string[];
+    message?: string;
   }[];
 };
 
 const Meaning = ({ word }: meaningProps) => {
   return (
     <div className={styles.container}>
+      <div className={styles.error}>{word.message}</div>
       <main>
         {word.length > 0 && (
           <div>
@@ -76,8 +78,21 @@ const Meaning = ({ word }: meaningProps) => {
                 ))}
               </div>
             ))}
-            <p>
-              Source: <a href={word[0].sourceUrls[0]}>{word[0].sourceUrls[0]}</a>
+            <p className={styles.reference_section}>
+              <span className={styles.source}>Source:</span>{' '}
+              <a href={word[0].sourceUrls[0]} className={styles.reference}>
+                {word[0].sourceUrls[0]}{' '}
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                  <path
+                    fill="none"
+                    stroke="#838383"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M6.09 3.545H2.456A1.455 1.455 0 0 0 1 5v6.545A1.455 1.455 0 0 0 2.455 13H9a1.455 1.455 0 0 0 1.455-1.455V7.91m-5.091.727 7.272-7.272m0 0H9m3.636 0V5"
+                  />
+                </svg>
+              </a>
             </p>
           </div>
         )}

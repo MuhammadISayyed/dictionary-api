@@ -20,6 +20,7 @@ function App() {
         }
       ];
       sourceUrls: string[];
+      message?: string;
     }[]
   >([]);
 

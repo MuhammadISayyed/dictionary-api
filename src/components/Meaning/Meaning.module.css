@@ -23,7 +23,9 @@
 }
 
 .alternatives {
-  margin-block: var(--space-medium);
+  &:not(:last-child) {
+    margin-block: var(--space-medium);
+  }
   display: flex;
   flex-direction: column;
   gap: var(--space-medium);
@@ -47,4 +49,23 @@
 
 .dot {
   color: var(--color-grey);
+}
+
+.reference_section {
+  margin-bottom: var(--space-medium);
+}
+
+.reference {
+  text-decoration: none;
+  color: var(--color-grey-darker);
+}
+
+.source {
+  color: grey;
+}
+
+.error {
+  color: var(--color-almost-red);
+  text-align: center;
+  margin-top: var(--space-medium);
 }

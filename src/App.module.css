@@ -150,3 +150,9 @@ body {
   align-items: baseline;
   margin-top: 5rem;
 }
+
+@media (max-width: 1024px) {
+  .container {
+    width: 85vw;
+  }
+}
