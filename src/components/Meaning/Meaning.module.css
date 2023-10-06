@@ -1,0 +1,71 @@
+.container {
+  width: inherit;
+}
+
+.speech_part {
+  font-size: var(--font-subtitle);
+  font-weight: bold;
+  font-style: italic;
+}
+
+.meaning {
+  font-size: var(--font-heading-small);
+  color: var(--color-grey);
+  margin-top: var(--space-medium);
+}
+
+.definition {
+  max-width: 53ch;
+
+  &::marker {
+    color: var(--color-almost-purple);
+  }
+}
+
+.alternatives {
+  &:not(:last-child) {
+    margin-block: var(--space-medium);
+  }
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium);
+}
+
+.synonym_container {
+  display: flex;
+  gap: var(--space-medium);
+}
+
+.synonyms {
+  font-size: var(--font-heading-small);
+  color: var(--color-grey);
+}
+
+.alternative {
+  font-size: var(--font-heading-small);
+  color: var(--color-almost-purple);
+  font-weight: bold;
+}
+
+.dot {
+  color: var(--color-grey);
+}
+
+.reference_section {
+  margin-bottom: var(--space-medium);
+}
+
+.reference {
+  text-decoration: none;
+  color: var(--color-grey-darker);
+}
+
+.source {
+  color: grey;
+}
+
+.error {
+  color: var(--color-almost-red);
+  text-align: center;
+  margin-top: var(--space-medium);
+}

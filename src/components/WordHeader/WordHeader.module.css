@@ -1,0 +1,29 @@
+.header_container {
+  width: inherit;
+}
+
+.container {
+  width: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: var(--space-medium);
+}
+
+.word {
+  font-size: var(--font-heading-1);
+  font-weight: bold;
+}
+
+.pronunciation {
+  font-size: var(--font-subtitle);
+  color: var(--color-almost-purple);
+  margin-top: -0.5rem;
+}
+
+.button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
