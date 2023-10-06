@@ -29,7 +29,7 @@ function App() {
   return (
     <div className={`${styles.app}`}>
       <div className={styles.container}>
-        <AppHeader setTheme={setTheme} />
+        <AppHeader setTheme={setTheme} theme={theme} />
         <Input theme={theme} word={word} setWord={setWord} />
         <WordHeader word={word} />
         <Meaning word={word} />

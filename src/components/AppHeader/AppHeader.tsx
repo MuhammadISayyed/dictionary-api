@@ -5,9 +5,10 @@ import styles from './AppHeader.module.css';
 
 type AppHeaderProps = {
   setTheme: React.Dispatch<React.SetStateAction<string>>;
+  theme: string;
 };
 
-const AppHeader = ({ setTheme }: AppHeaderProps) => {
+const AppHeader = ({ theme, setTheme }: AppHeaderProps) => {
   const [isOn, setIsOn] = useState(false);
   const root = document.documentElement;
   const getStoredTheme = localStorage.getItem('colorTheme');
@@ -63,7 +64,7 @@ const AppHeader = ({ setTheme }: AppHeaderProps) => {
         </g>
       </svg>
       <div className={styles.toggles}>
-        <SelectFont />
+        <SelectFont theme={theme} />
         <button onClick={handleToggle} className={styles.toggle_btn}>
           <svg
             className={styles.arrow}

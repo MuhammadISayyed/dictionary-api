@@ -17,9 +17,19 @@
   padding-top: var(--space-tiny);
   align-items: center;
   gap: var(--space-medium);
-  background-color: var(--color-white);
   border-radius: 0.5rem;
+}
+
+.select_area_light {
+  background-color: var(--color-white);
   box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+}
+
+.select_area_dark {
+  background-color: var(--color-black);
+  box-shadow: 0px 10px 38px -10px var(--color-almost-purple),
+    0px 10px 20px -15px var(--color-almost-purple);
+  color: var(--color-white);
 }
 
 .select_btn {
@@ -34,6 +44,14 @@
   gap: 12px;
   margin-right: var(--space-tiny);
   margin-bottom: 0.4rem;
+}
+
+.select_btn_light {
+  color: var(--color-black);
+}
+
+.select_btn_dark {
+  color: var(--color-white);
 }
 
 .item {
