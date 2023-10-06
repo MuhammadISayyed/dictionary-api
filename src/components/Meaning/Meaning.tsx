@@ -1,5 +1,4 @@
 import styles from './Meaning.module.css';
-
 type meaningProps = {
   word: {
     word: string;
@@ -20,7 +19,12 @@ type meaningProps = {
 const Meaning = ({ word }: meaningProps) => {
   return (
     <div className={styles.container}>
-      <div className={styles.error}>{word.message}</div>
+      <div className={styles.error}>
+        {/*
+      // @ts-ignore */}
+
+        {word.message}
+      </div>
       <main>
         {word.length > 0 && (
           <div>
