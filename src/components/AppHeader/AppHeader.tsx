@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SelectFont from './SelectFont';
 import styles from './AppHeader.module.css';
 
@@ -13,6 +13,20 @@ const AppHeader = ({ theme, setTheme }: AppHeaderProps) => {
   const root = document.documentElement;
   const getStoredTheme = localStorage.getItem('colorTheme');
 
+  useEffect(() => {
+    if (getStoredTheme === 'light') {
+      setIsOn(false);
+      setTheme('light');
+      root.classList.remove('dark');
+      root.classList.add('light');
+    } else if (getStoredTheme === 'dark') {
+      setTheme('dark');
+      setIsOn(true);
+      root.classList.remove('light');
+      root.classList.add('dark');
+    }
+  }, []);
+
   const toggleVariants = {
     toggled: {
       x: 7,
@@ -22,16 +36,6 @@ const AppHeader = ({ theme, setTheme }: AppHeaderProps) => {
       x: 0,
     },
   };
-
-  if (getStoredTheme === 'light') {
-    setTheme('light');
-    root.classList.remove('dark');
-    root.classList.add('light');
-  } else if (getStoredTheme === 'dark') {
-    setTheme('dark');
-    root.classList.remove('light');
-    root.classList.add('dark');
-  }
 
   const handleToggle = () => {
     setIsOn(!isOn);
@@ -53,7 +57,7 @@ const AppHeader = ({ theme, setTheme }: AppHeaderProps) => {
         <g
           fill="none"
           fillRule="evenodd"
-          stroke={`${isOn ? 'hsl(274, 82%, 60%)' : '#838383'}`}
+          stroke={`${isOn || theme === 'dark' ? 'hsl(274, 82%, 60%)' : '#838383'}`}
           strokeLinecap="round"
           strokeWidth="1.5"
         >
@@ -73,7 +77,7 @@ const AppHeader = ({ theme, setTheme }: AppHeaderProps) => {
             height="37"
             viewBox="0 0 24 24"
             fill="none"
-            stroke={`${isOn ? 'hsl(274, 82%, 60%)' : '#838383'}`}
+            stroke={`${isOn || theme === 'dark' ? 'hsl(274, 82%, 60%)' : '#838383'}`}
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -97,7 +101,7 @@ const AppHeader = ({ theme, setTheme }: AppHeaderProps) => {
         >
           <path
             fill="none"
-            stroke={`${isOn ? 'hsl(274, 82%, 60%)' : '#838383'}`}
+            stroke={`${isOn || theme === 'dark' ? 'hsl(274, 82%, 60%)' : '#838383'}`}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="1.5"
